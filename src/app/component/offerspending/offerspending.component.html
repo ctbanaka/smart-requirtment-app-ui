@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+  <link rel="stylesheet" href="offerspending.component.css">
+
+</head>
+
+
+
+<body>
+
+ 
+
+<table class="table table-bordered">
+
+  <thead>
+
+    <tr>
+
+      <!-- <th></th> -->
+
+      <th>Name</th>
+
+      <th style="text-align: center">TotalExp.</th>
+
+      <th style="text-align: center">Skill:</th>
+
+      <th></th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <ng-container *ngFor="let row of offers  | paginate:{ itemsPerPage: tableSize,
+
+      currentPage: page,
+
+      totalItems: count}; let i = index">
+
+      <tr>
+
+        <!-- <td (click)="row.isExpand = !row.isExpand" style="text-align: center;">
+
+          <i class="fa fa-angle-down" style="font-size:36px"></i>
+
+       
+
+        </td> -->
+
+       
+
+        <td>{{ row.candidate_name }} </td>
+
+        <td style="text-align: center">{{ row.no_of_year }}</td>
+
+        <td style="text-align: center">{{ row.skill_master.skill_name }}</td>
+
+        <td (click)="row.isExpand = !row.isExpand" style="text-align: center;">
+
+          <i class="fa fa-angle-down" style="font-size:36px"></i>
+
+          <!-- <i *ngIf="!row.isExpand" class="bi-chevron-right"></i>
+
+          <i *ngIf="row.isExpand" class="bi-chevron-up"></i> -->
+
+        </td>
+
+      </tr>
+
+
+
+      <tr *ngIf="row.isExpand" style="background-color: #f2f2f2;">
+
+        <td colspan="4" style="padding-left:120px ;">
+
+           <span><b>Name:</b>  &nbsp; {{row.candidate_name}}</span><br>
+
+          <span><b>Number of Years:</b>  &nbsp; {{row.no_of_year}}</span><br>
+
+          <!-- &nbsp;&nbsp; <span><b>Number of years:</b>  &nbsp; {{row.no.of years}}</span><br> -->
+
+          <!-- <span><b>Skill:</b>  &nbsp; {{row.skills}}</span><br> -->
+
+         <span><b>Current Company:</b>  &nbsp; {{row.current_company}}</span><br>
+
+          <span><b>Total Experience:</b>  &nbsp; {{row.no_of_year}} Years</span><br>
+
+
+
+          <span><b>Joining Location:</b>  &nbsp; {{row.joining_location}}</span><br>
+
+          <span><b>Current Status:</b>  &nbsp; {{row.current_status}}</span><br>
+
+          <span><b>Tower:</b>  &nbsp; {{row.tower}}</span><br>
+
+          <span><b>Grade proposed by BU:</b>  &nbsp; {{row.grade_proposed_bu}}</span><br>
+
+
+
+          <span><b>Arc New Grade:</b>  &nbsp; {{row.arc_new_grade}}</span><br>
+
+          <span><b>Salary:</b>  &nbsp; {{row.salary}}</span><br>
+
+          <span><b>Arc deviation new Grade:</b>  &nbsp; {{row.arc_deviation_new_grade}}</span><br>
+
+          <span><b>B1:</b>  &nbsp; {{row.B1}}</span><br>
+
+          <span><b>B2:</b>  &nbsp; {{row.B2}}</span><br>
+
+          <span><b>C1:</b>  &nbsp; {{row.C1}}</span><br>
+
+          <span><b>C2:</b>  &nbsp; {{row.C2}}</span><br>
+
+          <span><b>D1:</b>  &nbsp; {{row.D1}}</span><br>
+
+          <span><b>D2:</b>  &nbsp; {{row.D2}}</span><br>
+
+         
+
+          <!-- <button type="button">Click Me!</button> -->
+
+          <button type="button" class="btn btn-outline-info" href="javascript.void(0);" routerLink="/team4navbar">Read More</button>
+
+        </td>
+
+      </tr>
+
+    </ng-container>
+
+  </tbody>
+
+</table>
+
+
+
+         
+
+ 
+
+  <!-- <h2>Offers Pending for Approvals</h2>
+
+  <div>
+
+    <table>
+
+      <tr>
+
+        <th>Name</th>
+
+        <th>TotalExp.</th>
+
+        <th>Skill</th>
+
+      </tr>
+
+      <tr *ngFor="let offerp of offers | paginate:{ itemsPerPage: tableSize,
+
+            currentPage: page,
+
+            totalItems: count}; let i = index">
+
+        <td>{{offerp.name}}</td>
+
+        <td>&nbsp; &nbsp; &nbsp; &nbsp; {{offerp.totalexp}}</td>
+
+        <td>{{offerp.skills}} </td>
+
+       
+
+      </tr>
+
+
+
+    </table> -->
+
+
+
+    <!-- Pagination--------->
+
+
+
+    <!-- <div class="pagination">
+
+
+
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+
+      </pagination-controls>
+
+
+
+    </div>
+
+  </div> -->
+
+ <div class="pagination" >
+
+
+
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+
+      </pagination-controls>
+
+
+
+    </div>
+
+
+
+
+
+ 
+
+</body>
+
+
+
+</html>

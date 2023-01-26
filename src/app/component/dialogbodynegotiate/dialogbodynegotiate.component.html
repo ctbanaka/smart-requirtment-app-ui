@@ -1,0 +1,14 @@
+<button mat-icon-button style="float: right;margin: 5px;" matDialogClose>
+
+    <mat-icon>close</mat-icon>
+    </button>
+    <div class="dialougeclass">
+    <h4 class="approve">Comments</h4>
+    <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Type your comment..."></textarea>
+      </mat-form-field>
+    </div>
+     <mat-dialog-actions align="center" (click)="alertWithSuccess()">
+      <button class="Reject" mat-raised-button color="accent" matDialogClose>Negotiate</button>
+    </mat-dialog-actions>

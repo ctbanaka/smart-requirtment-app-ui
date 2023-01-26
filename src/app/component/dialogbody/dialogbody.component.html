@@ -1,0 +1,27 @@
+<div class="dialougebox">
+
+
+<button mat-icon-button style="float: right;margin: 5px;" matDialogClose>
+
+<mat-icon>close</mat-icon>
+</button>
+<div class="dialougeclass">
+<h4 class="approve">Appproval Reason:</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Select Reason</mat-label>
+  <mat-select [disabled]="disableSelect.value">
+    <mat-option value="option1">Joining within 30 days</mat-option>
+  
+    <mat-option value="option3">Candidate is fine with 19LPA</mat-option>
+  </mat-select>
+</mat-form-field>
+<h4 class="approve">Comments</h4>
+<mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Type your comment..."></textarea>
+  </mat-form-field>
+</div>
+ <mat-dialog-actions align="center" (click)="alertWithSuccess()">
+  <button class="approved" mat-raised-button color="primary" matDialogClose>Approve</button>
+</mat-dialog-actions>
+</div>

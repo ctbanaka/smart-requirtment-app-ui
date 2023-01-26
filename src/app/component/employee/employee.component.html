@@ -1,0 +1,235 @@
+<!-- <mat-toolbar>
+
+    
+  <button routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>keyboard_backspace</mat-icon>
+
+  </button> 
+  
+
+
+  <div class="example-flex-container">
+
+      <button 
+      
+      mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </button>
+  </div>
+</mat-toolbar> -->
+
+
+
+
+
+
+<div class="backbtn">
+  <button type="button" href="javascript.void(0);" routerLink="/team3navbar" class="btn btn-light">Back</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" href="javascript.void(0);" routerLink="/" class="btn btn-light">Home</button>
+</div>
+
+<div class="candidate">Candidate Details </div>
+
+
+
+<div class="card1" layout-align="center center">
+
+  <div class="container">
+
+    <div class="title1"> Candidate Profile <br> <br></div>
+
+
+
+    <div *ngFor="let employee of employeelist">
+
+
+      {{employee.candidate_detail_id}}
+
+      Name :{{employee.candidate_name}} <br>
+
+      Contact No :{{employee.contact_number}} <br>
+
+      Email : {{employee.candidate_email}} <br>
+
+      Current Company: {{employee.current_company}} <br>
+
+      Joining Location : {{employee.joining_location}} <br>
+
+      Skill : {{employee.salary}} <br>
+
+      Tower : {{employee.tower}} <br>
+
+      Current Status :{{employee.current_status}}
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card1">
+
+  <div class="container1">
+
+    <div class="title1">Feedback Information <br> <br></div>
+    <div *ngFor="let employee of feedbackifnolist">
+
+      L1 Panel Name : {{employee.l1_panel_name}} <br>
+
+      L1 Average Rating : {{employee.l1_avarage_rating}} <br>
+
+      L2 Panel Name : {{employee.l2_panel_name}} <br>
+
+      L2 Average Rating : {{employee.l2_avarage_rating}} <br><br>
+
+      <button mat-raised-button color="primary">View Evaluation Form</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="card1">
+
+  <div class="container">
+
+    <div class="title1">Candidate Experince <br> <br></div>
+    <div *ngFor="let employee of candidateexplist">
+
+      Total Exp : {{employee.total_exp}} <br>
+
+      Relevent Experince :{{employee.rel_exp}}<br>
+
+      Level based on Exp : {{employee.level_based_on_exp}} <br>
+
+      Proposed Grade : {{employee.proposed_grade}} <br>
+
+      Band Deviation : {{employee.band_deviation}} <br>
+      <br>
+
+
+      <button (click)="openpdf()" mat-raised-button color="primary">Download Resume</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="card1">
+
+  <div class="container1">
+
+    <div class="title1">CTC Details <br> <br></div>
+    <div *ngFor="let employee of ctcdetailslist">
+
+      Current CTC : {{employee.current_ctc}} <br>
+
+      Expected CTC: {{employee.expected_ctc}} <br>
+
+      Proposed/Offered CTC: {{employee.proposed_ctc}} <br>
+
+      Proposed/Offered CTC in words: {{employee.counter_offered}} <br>
+
+      Average C1 CTC: {{employee.average_c1_ctc}} <br>
+
+      Hike Percent: {{employee.hike_percent}} <br>
+
+      Thershhold value: {{employee.threshold_value}} <br>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="card1">
+
+  <div class="container1">
+
+    <div class="title1">CTC History <br> <br></div>
+    <div *ngFor="let employee of ctchistorylist">
+
+      Offered CTC: {{employee.offeredctc}} <br>
+
+      Holding Offer: {{employee.holdingoffer}} <br>
+
+      Created By: {{employee.createdby}} <br>
+
+      Date & Time: {{employee.dateandtime}} <br>
+
+    </div>
+  </div>
+
+</div> -->
+
+<!-- <div class="container1">
+
+  <div class="title1">Joining Details <br> <br></div>
+  <div *ngFor="
+  ">
+
+    DOJ: <br>
+
+    Joining Month: <br>
+
+    Notice Period: <br>
+
+  </div>
+</div> -->
+
+
+
+
+<mat-dialog-actions>
+
+
+  <div class="example-button-row">
+    <button _ngcontent-fxl-c42="" mat-raised-button="" color="success"
+      class="mdc-button mdc-button--raised mat-mdc-raised-button mat-success mat-mdc-button-base"
+      ng-reflect-color="success" style="
+top: 17px;
+"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+      <mat-icon _ngcontent-fxl-c42="" role="img"
+        class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true"
+        data-mat-icon-type="font">thumb_up</mat-icon><span class="mdc-button__label" (click)="openDialog()"> Approve
+      </span><span class="mat-mdc-focus-indicator"></span><span matripple="" class="mat-ripple mat-mdc-button-ripple"
+        ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span><span
+        class="mat-mdc-button-touch-target"></span>
+    </button><br>
+    <button _ngcontent-yia-c56="" _ngcontent-ori-c56="" _ngcontent-ngd-c42="" mat-raised-button="" color="warn"
+      aria-label="Example fab with a heart icon" ng-reflect-color="
+      " class="mdc-button mdc-button--raised mat-mdc-raised-button mat-warn mat-mdc-button-base"
+      style="left: 130px;bottom: 20px;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+      <mat-icon _ngcontent-yia-c56="" role="img" _ngcontent-ori-c56="" _ngcontent-ngd-c42="" aria-hidden="true"
+        data-mat-icon-type="font" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color">
+        thumb_down</mat-icon>
+      <span class="mdc-button__label"><span _ngcontent-yia-c56=""
+          class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span _ngcontent-yia-c56=""
+          class="mdc-button__label"><span _ngcontent-yia-c56="" _ngcontent-ori-c56=""
+            class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span _ngcontent-yia-c56=""
+            _ngcontent-ori-c56="" class="mdc-button__label"><span _ngcontent-yia-c56="" _ngcontent-ori-c56=""
+              _ngcontent-ngd-c42="" (click)="openDialogreject()">Reject</span></span><span _ngcontent-yia-c56=""
+            _ngcontent-ori-c56="" class="mat-mdc-focus-indicator"></span><span _ngcontent-yia-c56=""
+            _ngcontent-ori-c56="" matripple="" ng-reflect-disabled="false"
+            ng-reflect-trigger="[object HTMLButtonElement]" class="mat-ripple mat-mdc-button-ripple"></span><span
+            _ngcontent-yia-c56="" _ngcontent-ori-c56="" class="mat-mdc-button-touch-target"></span></span><span
+          _ngcontent-yia-c56="" class="mat-mdc-focus-indicator"></span><span _ngcontent-yia-c56="" matripple=""
+          ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"
+          class="mat-ripple mat-mdc-button-ripple"></span><span _ngcontent-yia-c56=""
+          class="mat-mdc-button-touch-target"></span></span><span class="mat-mdc-focus-indicator"></span><span
+        matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false"
+        ng-reflect-trigger="[object HTMLButtonElement]"></span><span class="mat-mdc-button-touch-target"></span>
+    </button>
+
+    <div class="negobtn">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="accent" (click)="openDialognegotiate()">Negotiate</button>
+    </div>
+  </div>
+</mat-dialog-actions>
