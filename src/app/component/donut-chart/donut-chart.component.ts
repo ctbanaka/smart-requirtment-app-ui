@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ratio } from 'src/app/models/selectRejectRatio';
-import { IChart } from 'src/app/shared/interfaces/chartInterface';
-import { ChartService } from 'src/app/shared/services/chart.service';
+import { ChartService } from 'app/shared/services/chart.service';
+import { ratio } from 'app/models/selectRejectRatio';
+import { IChart } from 'app/shared/interfaces/chartInterface';
+
 import { FilterComponent } from '../filter/filter.component';
 
 declare var google: any;
@@ -18,7 +19,7 @@ export class DonutChartComponent implements OnInit {
   selectRejectRatio : ratio;
 
   constructor(
-    private chartService: ChartService,
+    private chartService:ChartService,
     private modalService: NgbModal,
     private router: Router
   ) { }
@@ -47,8 +48,9 @@ export class DonutChartComponent implements OnInit {
     
     var data = google.visualization.arrayToDataTable([
       ['Task', 'percentage'],
-      ['Rejected ratio', rejectionRatio],
-      ['Selected ratio', selectionRatio],
+      ['Selected ratio', rejectionRatio],
+      ['Rejected ratio', selectionRatio],
+      
 
 
     ]);
@@ -82,11 +84,11 @@ export class DonutChartComponent implements OnInit {
 
     if(event.targetID ==="slice#0")
 
-      this.router.navigateByUrl("selectratio");
+      this.router.navigateByUrl("rejectratio");
 
     if(event.targetID ==="slice#1")
 
-      this.router.navigateByUrl("rejectratio");
+      this.router.navigateByUrl("selectratio");
 
   }
 

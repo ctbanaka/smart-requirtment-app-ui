@@ -1,11 +1,11 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 
-import { EmployeeService } from 'src/app/shared/services/employee.service';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog'; 
 import { DialogbodyComponent } from '../dialogbody/dialogbody.component';
 import { DialogbodyrejectComponent } from '../dialogbodyreject/dialogbodyreject.component';
 import { DialogbodynegotiateComponent } from '../dialogbodynegotiate/dialogbodynegotiate.component';
+import { EmployeeService } from 'app/shared/services/employee.service';
 @Component({ 
   selector: 'app-employee',
   templateUrl: './employee.component.html',
