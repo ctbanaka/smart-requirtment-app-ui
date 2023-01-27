@@ -48,6 +48,7 @@ export class DonutChartComponent implements OnInit {
     
     var data = google.visualization.arrayToDataTable([
       ['Task', 'percentage'],
+
       ['Selected ratio', rejectionRatio],
       ['Rejected ratio', selectionRatio],
       
@@ -84,11 +85,12 @@ export class DonutChartComponent implements OnInit {
 
     if(event.targetID ==="slice#0")
 
-      this.router.navigateByUrl("rejectratio");
+    this.router.navigateByUrl("selectratio");
 
     if(event.targetID ==="slice#1")
 
-      this.router.navigateByUrl("selectratio");
+    this.router.navigateByUrl("rejectratio");
+      
 
   }
 
