@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OfferService } from 'src/app/shared/services/offer.service';
+import { OfferService } from 'app/shared/services/offer.service';
 
 @Component({
   selector: 'app-card1',
