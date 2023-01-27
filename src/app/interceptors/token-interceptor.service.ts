@@ -16,8 +16,7 @@ export class TokenInterceptorService {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
 
-    this.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJjaG93ZGFtLXZpamF5YS5rdW1hckBjYXBnZW1pbmkuY29tIiwiaWF0IjoxNjc0NzkxODQ5LCJleHAiOjE2NzQ4MjQyNDl9.qbSYEUEtq6tH9p3nwGSd6_1XSlSKSJDvFzz-fOVfe48"
-
+    this.token = localStorage.getItem("bearer_token")
     request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + this.token) }); request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
 
     return next.handle(request).pipe(
