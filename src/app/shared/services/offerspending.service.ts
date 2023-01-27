@@ -6,25 +6,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OfferspendingService {
-/*
-  private baseURL = "http://localhost:8083/reservation";
-  constructor(private httpClient: HttpClient) { }
 
-  getReservationList(): Observable<any> {
-
-    return this.httpClient.get<any>( "http://localhost:8083/reservation/ShowAllReservations");
-
-  }*/
-  
   //private baseURL = "http://localhost:5000/offers";
  // private baseURL = "http://localhost:3000/allcandidate";
-  private baseURL = "https://sra.onrender.com/pendingofferslist";
+  //private baseURL = "https://sra.onrender.com/pendingofferslist";
+  private baseURL = "https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/workflow/fetchFlowCandidates";
   //private baseURL = "http://localhost:3300/offers";
   //private baseURL = "https://run.mocky.io/v3/e1efd3a8-fc3a-4838-83a8-eb3e39cefe2a";
   constructor(private httpClient: HttpClient) { }
 
 getOffersPendingList(): Observable<any> {
-
-    return this.httpClient.get<any>(this.baseURL);
+  const body = {
+    "key":false,
+    "role":"Tower Lead",
+    "emailId":"chowdam-vijaya.kumar@capgemini.com",
+    "bu_name":"AppsNA"
+   }
+   return this.httpClient.post<any>(this.baseURL,body);
 }
 }

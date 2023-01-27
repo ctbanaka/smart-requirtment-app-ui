@@ -39,8 +39,8 @@ export class OfferspendingComponent implements OnInit{
    title = 'pagination';
    page: number = 1;
    count: number = 0;
-   tableSize : number = 4;
-   tableSizes: any = [4,10,15,20];
+   tableSize : number = 7;
+   tableSizes: any = [7,10,15,20];
 
   onTableDataChange(event: any){
     this.page = event;
