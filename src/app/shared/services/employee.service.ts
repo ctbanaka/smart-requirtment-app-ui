@@ -86,6 +86,10 @@ export class EmployeeService {
    }    console.log(errorMessage);
      return throwError(errorMessage);  }
 
-
+commets():Observable<any>{
+ let url:string = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/workflow/commentsHistory'
+ let body = {"candidate_detail_id":"15133","role":"Tower Lead","emailId":"chowdam-vijaya.kumar@capgemini.com"}
+ return this.httpClient.post(url,body) ;
+}
 
 }

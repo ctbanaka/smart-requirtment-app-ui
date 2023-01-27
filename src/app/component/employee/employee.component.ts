@@ -17,6 +17,7 @@ feedbackifnolist:any;
 candidateexplist: any;
   ctcdetailslist: any;
   ctchistorylist: any;
+  comments:any;
   
 
 constructor(private employee:EmployeeService,private matDialog:MatDialog){
@@ -75,7 +76,7 @@ this.employee.getctchistorylist().subscribe((response) => {
  console.log(this.ctchistorylist);
 });  
 
-
+this.employee.commets().subscribe(data=>this.comments=data);
 
 
 
