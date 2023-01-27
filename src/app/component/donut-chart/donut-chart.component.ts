@@ -57,7 +57,7 @@ export class DonutChartComponent implements OnInit {
     var options = {
       pieHole: .5,
 
-      width: 400,
+      width: 500,
       height: 300,
 
       plotOptions: {

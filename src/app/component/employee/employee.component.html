@@ -47,13 +47,12 @@
     <div *ngFor="let employee of employeelist">
 
 
-      {{employee.candidate_detail_id}}
 
       Name :{{employee.candidate_name}} <br>
 
-      Contact No :{{employee.contact_number}} <br>
+      Contact No :{{employee.contactNo}} <br>
 
-      Email : {{employee.candidate_email}} <br>
+      Email : {{employee.email_id}} <br>
 
       Current Company: {{employee.current_company}} <br>
 
@@ -99,20 +98,18 @@
 
     <div class="title1">Candidate Experince <br> <br></div>
     <div *ngFor="let employee of candidateexplist">
-
       Total Exp : {{employee.total_exp}} <br>
 
-      Relevent Experince :{{employee.rel_exp}}<br>
+      Relevent Experince :{{employee.relevant_exp}}<br>
 
-      Level based on Exp : {{employee.level_based_on_exp}} <br>
+      Level based on Exp : {{employee.level_based_exp}} <br>
 
       Proposed Grade : {{employee.proposed_grade}} <br>
 
-      Band Deviation : {{employee.band_deviation}} <br>
-      <br>
+      Band Deviation : {{employee.band_diviation}} <br><br>
 
 
-      <button (click)="openpdf()" mat-raised-button color="primary">Download Resume</button>
+      <button mat-raised-button color="primary">Download Resume</button>
     </div>
   </div>
 </div>
@@ -127,11 +124,11 @@
 
       Current CTC : {{employee.current_ctc}} <br>
 
-      Expected CTC: {{employee.expected_ctc}} <br>
+      Expected CTC: {{employee.exp_ctc}} <br>
 
-      Proposed/Offered CTC: {{employee.proposed_ctc}} <br>
+      Proposed/Offered CTC: {{employee.proposed_offer_ctc}} <br>
 
-      Proposed/Offered CTC in words: {{employee.counter_offered}} <br>
+      Proposed/Offered CTC in words: {{employee.offered_ctc}} <br>
 
       Average C1 CTC: {{employee.average_c1_ctc}} <br>
 
@@ -179,6 +176,41 @@
 
   </div>
 </div> -->
+
+<div class="container d-flex justify-content-center">
+  <div class="card mt-5">
+    <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
+      <i class="fas fa-chevron-left"></i>
+      <span class="pb-3">Comments</span>
+      <i class="fas fa-times"></i>
+    </div>
+      <div class="d-flex flex-row p-3">
+        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+        <div class="chat ml-2 p-3">Resume required</div>
+      </div>
+
+      <div class="d-flex flex-row p-3">
+        <div class="bg-white mr-2 p-3"><span class="text-muted">Yeah sure</span></div>
+        <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7.png" width="30" height="30">
+      </div>
+     
+      <div class="d-flex flex-row p-3">
+        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+        <div class="myvideo ml-2"><div class="chat ml-2 p-3">Note down the skills required</div></div>
+      </div>
+     
+      <div class="d-flex flex-row p-3">
+        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+        <div class="chat ml-2 p-3"><span class="text-muted dot">. . .</span></div>
+      </div>
+     
+      <div class="form-group px-3">
+        <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
+      </div>
+  </div>
+</div>
+
+
 
 
 
@@ -229,7 +261,21 @@ top: 17px;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button mat-raised-button color="accent" (click)="openDialognegotiate()">Negotiate</button>
+      <button mat-raised-button color="accent" (click)=openDialognegotiate()>Negotiate</button>
     </div>
   </div>
 </mat-dialog-actions>
+
+
+<!-- <div class="container mt-3">
+  <div class="row-start text-center border">
+    <div class="col-8">
+      <h3 class="text-color">Comments</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+        
+    </div>
+  </div>
+</div> -->
