@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { map, catchError } from 'rxjs/operators';
+
+
 
 
 @Injectable({
@@ -14,7 +18,7 @@ export class EmployeeService {
   constructor(private httpClient: HttpClient) { }
 
   private baseUrl = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU';
-
+  private commentUrl = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/commentsHistory';
 
   postEmployeelist(): Observable<any> {
     // return this.httpClient.get<any[]>(`${this.baseUrl}`)
@@ -64,9 +68,24 @@ export class EmployeeService {
 
   }
 
-
+  
   // getEmployeelist() {
   //   return this.httpClient.get(this.baseUrl);
   // }
+
+  generateToken(body){
+        return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/token/generateToken",body)
+        .pipe(
+          map((body: any) => body),
+          catchError(this.handleError),
+        );
+      }
+ handleError(error: any) {    let errorMessage = ''; 
+   if (error.error instanceof ErrorEvent) {      errorMessage = `Error: ${error.error.message}`; 
+   } else {      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`; 
+   }    console.log(errorMessage);
+     return throwError(errorMessage);  }
+
+
 
 }

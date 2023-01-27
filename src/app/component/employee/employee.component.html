@@ -47,13 +47,12 @@
     <div *ngFor="let employee of employeelist">
 
 
-      {{employee.candidate_detail_id}}
 
       Name :{{employee.candidate_name}} <br>
 
-      Contact No :{{employee.contact_number}} <br>
+      Contact No :{{employee.contactNo}} <br>
 
-      Email : {{employee.candidate_email}} <br>
+      Email : {{employee.email_id}} <br>
 
       Current Company: {{employee.current_company}} <br>
 
@@ -99,20 +98,18 @@
 
     <div class="title1">Candidate Experince <br> <br></div>
     <div *ngFor="let employee of candidateexplist">
-
       Total Exp : {{employee.total_exp}} <br>
 
-      Relevent Experince :{{employee.rel_exp}}<br>
+      Relevent Experince :{{employee.relevant_exp}}<br>
 
-      Level based on Exp : {{employee.level_based_on_exp}} <br>
+      Level based on Exp : {{employee.level_based_exp}} <br>
 
       Proposed Grade : {{employee.proposed_grade}} <br>
 
-      Band Deviation : {{employee.band_deviation}} <br>
-      <br>
+      Band Deviation : {{employee.band_diviation}} <br><br>
 
 
-      <button (click)="openpdf()" mat-raised-button color="primary">Download Resume</button>
+      <button mat-raised-button color="primary">Download Resume</button>
     </div>
   </div>
 </div>
@@ -127,11 +124,11 @@
 
       Current CTC : {{employee.current_ctc}} <br>
 
-      Expected CTC: {{employee.expected_ctc}} <br>
+      Expected CTC: {{employee.exp_ctc}} <br>
 
-      Proposed/Offered CTC: {{employee.proposed_ctc}} <br>
+      Proposed/Offered CTC: {{employee.proposed_offer_ctc}} <br>
 
-      Proposed/Offered CTC in words: {{employee.counter_offered}} <br>
+      Proposed/Offered CTC in words: {{employee.offered_ctc}} <br>
 
       Average C1 CTC: {{employee.average_c1_ctc}} <br>
 
