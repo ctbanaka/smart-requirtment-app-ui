@@ -29,4 +29,11 @@ getOffersPendingList(): Observable<any> {
   return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/workflow/fetchFlowCandidates",body)
 
 }
+getJoiningBonus(): Observable<any> {
+  const body = {
+    "approver":"chowdam-vijaya.kumar@capgemini.com"
+   }
+  return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU",body)
+
+}
 }

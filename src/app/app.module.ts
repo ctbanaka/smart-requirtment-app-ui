@@ -33,6 +33,7 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
 import { Card1Component } from './component/card1/card1.component';
 import { Card2Component } from './component/card2/card2.component';
 import { EmployeeComponent } from './component/employee/employee.component';
+import { JoiningbonusComponent } from './component/joiningbonus/joiningbonus.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { EmployeeComponent } from './component/employee/employee.component';
     DialogbodynegotiateComponent,
     Card1Component,
     Card2Component,
-    EmployeeComponent
+    EmployeeComponent,
+    JoiningbonusComponent
 
   ],
   imports: [
