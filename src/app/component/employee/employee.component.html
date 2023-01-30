@@ -141,6 +141,28 @@
 
 </div>
 
+<div class="container mt-4 ">
+  <div class="row ">
+    <div class="col-9  border border-primary offset-1 border-2">
+      <h4 class="text-center text-color-black "><b>Comments</b>
+    
+      </h4>
+      
+      
+        <div class="d-flex flex-row p-3 " *ngFor= 'let commentt of comments'>
+          <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+          <div class="ml-2 p-3 border border-success">
+            <span>{{commentt.created_date}}</span><br>
+            <b>{{commentt.comment}}</b>
+          </div>
+        </div>
+        <div class="form-group px-2 mr-3">
+          <textarea class="form-control border border-secondary mb-3" rows="4" placeholder="Type your message"></textarea>
+        </div>
+    </div>
+  </div>
+
+</div>
 
 <!-- <div class="card1">
 
@@ -177,7 +199,10 @@
   </div>
 </div> -->
 
-<div class="container d-flex justify-content-center">
+<!--<div class="container d-flex justify-content-center ">
+  <div class="row">
+    <div class="col">
+  
   <div class="card mt-5">
     <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
       <span class="pb-3">Comments</span>
@@ -193,8 +218,10 @@
         <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
       </div>
   </div>
+</div> 
+  </div>
 </div>
-
+-->
 
 
 
