@@ -66,26 +66,10 @@ export class OfferspendingComponent implements OnInit{
     this.offerspendingList;
   }
 
-  /*
-  getReservations() {
-    this.reservationService.getReservationList().subscribe(data => {
-      console.log(Object.values(data.resList));
-      this.reservation = data.resList;
-
-    });*/
-
     getOffersPendings() {
-      // this.offerspendingservice.getOffersPendingList().subscribe(data => {
-        // console.log(Object.values(data.resList));
-        // this.offers = data.resList;
-         
-
         this.offerspendingservice.getOffersPendingList().subscribe((data)=>{
           this.offers=data;
        });
   }
-
-
-
 
 }
