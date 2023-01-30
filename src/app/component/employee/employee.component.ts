@@ -12,12 +12,13 @@ import { EmployeeService } from 'app/shared/services/employee.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-employeelist:any;
-feedbackifnolist:any;
-candidateexplist: any;
-  ctcdetailslist: any;
-  ctchistorylist: any;
-  comments:any;
+employeelist:any=[];
+feedbackifnolist:any=[];
+candidateexplist: any=[];
+  ctcdetailslist: any=[];
+  ctchistorylist: any=[];
+  comments:any=[];
+  row:any;
   
 
 constructor(private employee:EmployeeService,private matDialog:MatDialog){
@@ -32,8 +33,8 @@ openDialog(){
 
 openpdf(){
 
-     window.open(this.employeelist[0].resume_link);
-    console.log("button clicked",this.employeelist[0].resume_link)
+     window.open(this.employeelist[0].concat);
+    console.log("button clicked",this.employeelist[0].concat)
 }
 
 openDialognegotiate(){
@@ -48,10 +49,12 @@ openDialogreject(){
     width:'350px',
   })}
   ngOnInit():  void{
+    this.row=localStorage.getItem("rowValue");
 this.employee.postEmployeelist().subscribe((response) => {
-  this.employeelist = response;
-  response[0].candidate_detail_id;
- console.log(this.employeelist);
+  console.log("row value",this.row)
+  let resp = response[this.row]
+  this.employeelist.push(resp)
+ console.log("emp list",this.employeelist);
 });
 
 this.employee.getfeedbackifnolist().subscribe((response) => {
@@ -60,18 +63,20 @@ this.employee.getfeedbackifnolist().subscribe((response) => {
 });
 
 this.employee.postcandidateexplist().subscribe((response) => {
-  this.candidateexplist = response;
- console.log(this.candidateexplist);
+  let resp = response[this.row]
+  this.candidateexplist.push(resp)
+ console.log("emp list",this.candidateexplist);
 });
 
 this.employee.postctcdetailslist().subscribe((response) => {
-  this.ctcdetailslist = response;
- console.log(this.ctcdetailslist);
+  let resp = response[this.row]
+  this.ctcdetailslist.push(resp)
+ console.log("emp list",this.ctcdetailslist);
 });
 
 
 
-this.employee.getctchistorylist().subscribe((response) => {
+this.employee.postctchistorylist().subscribe((response) => {
   this.ctchistorylist = response;
  console.log(this.ctchistorylist);
 });  

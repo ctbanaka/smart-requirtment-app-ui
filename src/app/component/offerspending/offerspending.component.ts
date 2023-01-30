@@ -16,6 +16,8 @@ export class OfferspendingComponent implements OnInit{
 
   res: Offers = new Offers;
   offers:any;
+  selectedRowIndex: any;
+  rowValue:any;
   constructor(private offerspendingservice:OfferspendingService){
     this.offerspendingservice.getOffersPendingList().subscribe((data)=>{
       this.offers=data;
@@ -27,6 +29,15 @@ export class OfferspendingComponent implements OnInit{
   this.getOffersPendings();
      console.log(this.offerspendingservice.getOffersPendingList());
   }
+
+
+
+  showForEdit(row) { 
+          this.selectedRowIndex = row; 
+          console.log("value",this.selectedRowIndex)
+          localStorage.setItem("rowValue", this.selectedRowIndex);
+   }
+
   offerspendingList: Offerspending[] = users;
 
 

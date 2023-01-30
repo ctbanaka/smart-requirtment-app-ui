@@ -17,16 +17,21 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private baseUrl = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU';
+  // private baseUrl = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU';
+  private baseUrl = "https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/workflow/fetchFlowCandidates"
   private commentUrl = 'https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/commentsHistory';
 
   postEmployeelist(): Observable<any> {
     // return this.httpClient.get<any[]>(`${this.baseUrl}`)
     let body = {
-      "approver":"chowdam-vijaya.kumar@capgemini.com"
+      // "approver":"chowdam-vijaya.kumar@capgemini.com"
+      "key":false,
+      "role":"Tower Lead",
+      "emailId":"chowdam-vijaya.kumar@capgemini.com",
+      "bu_name":"AppsNA"
     }
-    return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU",body)
-
+    // return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs//workflow/fetchJBCandidatesForBU",body)
+    return this.httpClient.post("https://dev.actlabinnovationdev.digitalcloudplatform.com/smarthirenodejs/workflow/fetchFlowCandidates",body)
   }
 
   getfeedbackifnolist(): Observable<any[]> {
@@ -63,7 +68,7 @@ export class EmployeeService {
 
   // }
   
-  getctchistorylist(): Observable<any[]> {
+  postctchistorylist(): Observable<any[]> {
     return this.httpClient.get<any[]>(`${this.baseUrl}/ctchistory`)
 
   }
