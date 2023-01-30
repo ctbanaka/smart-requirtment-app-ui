@@ -6,7 +6,6 @@ import { PaginationService } from '../../shared/services/pagination.service';
 import { Offers } from './model/offerspending';
 import { OfferspendingService } from '../../shared/services/offerspending.service';
 
-
 @Component({
   selector: 'app-offerspending',
   templateUrl: './offerspending.component.html',
@@ -32,20 +31,17 @@ export class OfferspendingComponent implements OnInit{
   }
 
 
-
-  showForEdit(row) { 
-          this.selectedRowIndex = row; 
+  showForEdit(row) { 
+          this.selectedRowIndex = row; 
           console.log("value",this.selectedRowIndex)
           localStorage.setItem("rowValue", this.selectedRowIndex);
-   }
+   }
 
   offerspendingList: Offerspending[] = users;
 
 
-
  
-  
-
+ 
 
   //------Pagination --------
    title = 'pagination';
@@ -57,7 +53,7 @@ export class OfferspendingComponent implements OnInit{
   onTableDataChange(event: any){
     this.page = event;
     //this.offerspendingList;
-    
+   
     this.offers;
   }
  
@@ -67,15 +63,27 @@ export class OfferspendingComponent implements OnInit{
     this.offerspendingList;
   }
 
+  /*
+  getReservations() {
+    this.reservationService.getReservationList().subscribe(data => {
+      console.log(Object.values(data.resList));
+      this.reservation = data.resList;
+
+    });*/
+
     getOffersPendings() {
+      // this.offerspendingservice.getOffersPendingList().subscribe(data => {
+        // console.log(Object.values(data.resList));
+        // this.offers = data.resList;
+         
+
         this.offerspendingservice.getOffersPendingList().subscribe((data)=>{
           this.offers=data;
        });
 
-<<<<<<< HEAD
-=======
        
   }
+  //get joining bonus
   getJoiningBonus() {
     // this.offerspendingservice.getOffersPendingList().subscribe(data => {
       // console.log(Object.values(data.resList));
@@ -87,7 +95,6 @@ export class OfferspendingComponent implements OnInit{
      });
 
 
+}
+}
 
->>>>>>> 53459333db07b04b4e7cac6eba04e14575d4594c
-}
-}
