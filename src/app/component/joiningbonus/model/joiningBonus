@@ -1,0 +1,32 @@
+export class Joiningbonus{
+candidate_detail_id  ?: number;
+        candidate_name ?: string;
+        candidate_email ?: string;
+        contact_number ?: number;
+        current_company ?:string ;
+         joining_location  ?:string;
+         skill  ?:string;
+         tower  ?:string ;
+         current_status  ?: string;
+         total_exp  ?: number;
+         rel_exp  ?: number;
+         current_ctc  ?: number;
+         expected_ctc  ?: number;
+         doj  ?: string;
+         notice_period  ?: string;
+         proposed_ctc  ?: number;
+         proposed_grade  ?: string;
+         joining_bonus  ?: number;
+         hike_percent  ?: number;
+         resume_link  ?: string;
+         dojmonth  ?: string;
+         counter_offered  ?: string;
+         band_deviation  ?: string;
+         level_offered  ?: string;
+         hiring_threshold_amount  ?: string;
+         threshold_value  ?: string;
+         level_based_on_exp  ?: string;
+         project_code  ?: number;
+         feedback_concat  ?: string;
+         account_name  ?:string;
+}

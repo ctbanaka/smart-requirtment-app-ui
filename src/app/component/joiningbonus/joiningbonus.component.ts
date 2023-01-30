@@ -1,34 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import {users} from '../../offerspendinglist'
-import { Offerspending } from './model/offerspending.model';
-import { PaginationService } from '../../shared/services/pagination.service';
-//import { OfferspendingService } from '../services/offerspending.service';
-import { Offers } from './model/offerspending';
-import { OfferspendingService } from '../../shared/services/offerspending.service';
-
+import { Component } from '@angular/core';
+import { OfferspendingService } from 'app/shared/services/offerspending.service';
+import { Joiningbonus } from '../offerspending/model/joiningbonus';
 
 @Component({
-  selector: 'app-offerspending',
-  templateUrl: './offerspending.component.html',
-  styleUrls: ['./offerspending.component.css']
+  selector: 'app-joiningbonus',
+  templateUrl: './joiningbonus.component.html',
+  styleUrls: ['./joiningbonus.component.css']
 })
-export class OfferspendingComponent implements OnInit{
+export class JoiningbonusComponent {
 
-  res: Offers = new Offers;
-  offers:any;
+  res: Joiningbonus = new Joiningbonus;
+  //offers:any;
   offers1:any;
   selectedRowIndex: any;
   rowValue:any;
   constructor(private offerspendingservice:OfferspendingService){
-    this.offerspendingservice.getOffersPendingList().subscribe((data)=>{
-      this.offers=data;
+    this.offerspendingservice.getJoiningBonus().subscribe((data)=>{
+      this.offers1=data;
     })
   }
 
   ngOnInit(): void {
    // this.getOffersPendings();
-  this.getOffersPendings();
-     console.log(this.offerspendingservice.getOffersPendingList());
+  this.getJoiningBonus();
+     console.log(this.offerspendingservice.getJoiningBonus());
   }
 
 
@@ -39,7 +34,7 @@ export class OfferspendingComponent implements OnInit{
           localStorage.setItem("rowValue", this.selectedRowIndex);
    }
 
-  offerspendingList: Offerspending[] = users;
+  //offerspendingList: Offerspending[] = users;
 
 
 
@@ -58,24 +53,35 @@ export class OfferspendingComponent implements OnInit{
     this.page = event;
     //this.offerspendingList;
     
-    this.offers;
+    this.offers1;
   }
  
-  onTableSizeChange(event: any){
+  /*onTableSizeChange(event: any){
     this.tableSize = event.target.value;
     this.page = 1;
     this.offerspendingList;
-  }
+  }*/
 
-    getOffersPendings() {
+  /*
+  getReservations() {
+    this.reservationService.getReservationList().subscribe(data => {
+      console.log(Object.values(data.resList));
+      this.reservation = data.resList;
+
+    });*/
+
+    /*getOffersPendings() {
+      // this.offerspendingservice.getOffersPendingList().subscribe(data => {
+        // console.log(Object.values(data.resList));
+        // this.offers = data.resList;
+         
+
         this.offerspendingservice.getOffersPendingList().subscribe((data)=>{
           this.offers=data;
        });
 
-<<<<<<< HEAD
-=======
        
-  }
+  }*/
   getJoiningBonus() {
     // this.offerspendingservice.getOffersPendingList().subscribe(data => {
       // console.log(Object.values(data.resList));
@@ -88,6 +94,5 @@ export class OfferspendingComponent implements OnInit{
 
 
 
->>>>>>> 53459333db07b04b4e7cac6eba04e14575d4594c
 }
 }
