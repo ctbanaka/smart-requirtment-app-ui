@@ -1,0 +1,46 @@
+<div class="modal-header">
+  <h4 class="modal-title">Apply Filter</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 vertical-line">
+        <p>Source</p>
+        <p>Vendore</p>
+        <p>Tower</p>
+        <p>Skill</p>
+        <p>Date</p>
+        <p>Referrals</p>
+      </div>
+      <div class="col-8">
+        <form>
+          <div class="form-check" *ngFor="let i of [].constructor(7)">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Options
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  
+  <!--<a href="/"><input type ="submit" value="Clear All" class="button" ></a>-->
+  <a href="javascript.void(0);" routerLink=""><button class="btn btn-primary">Clear All</button></a>
+  <a href="javascript.void(0);" routerLink=""><button class="btn btn-primary">Apply filter</button></a>
+ <!--<a href="/"><input type ="submit" value="Apply filter" class="button" ></a>-->
+</div>
