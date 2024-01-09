@@ -27,6 +27,7 @@
     "@syncfusion/ej2-angular-grids": "^20.4.43",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.0",
+    "file-saver": "^2.0.5",
     "native-run": "^1.7.1",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.5.0",

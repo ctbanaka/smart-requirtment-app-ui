@@ -6,10 +6,6 @@ const config: CapacitorConfig = {
   webDir: 'dist/task1',
   bundledWebRuntime: false,
 
-  server:{
-    url:'http://192.168.29.22:4200',
-    cleartext:true
-  }
   
 };
 

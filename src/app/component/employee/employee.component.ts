@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-
+import { saveAs } from 'file-saver';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog'; 
 import { DialogbodyComponent } from '../dialogbody/dialogbody.component';
 import { DialogbodyrejectComponent } from '../dialogbodyreject/dialogbodyreject.component';
@@ -32,8 +32,7 @@ openDialog(){
 }
 
 openpdf(){
-
-     window.open(this.employeelist[0].concat);
+    window.open(this.employeelist[0].concat);
     console.log("button clicked",this.employeelist[0].concat)
 }
 
@@ -82,8 +81,7 @@ this.employee.postctchistorylist().subscribe((response) => {
 });  
 
 this.employee.commets().subscribe(data=>this.comments=data);
-
-
-
 }
 }
+
+
